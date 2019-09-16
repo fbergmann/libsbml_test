@@ -24,6 +24,7 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
     pyenv rehash
     pyenv activate conan
 else
+    sudo apt-get update
     sudo apt-get -y install check libexpat-dev libbz2-dev zlib1g-dev
 fi
 
