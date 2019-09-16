@@ -19,7 +19,7 @@ git fetch --unshallow
 mkdir build
 cd build
 conan install .. --build=missing
-cmake -DWITH_EXAMPLES=ON -DWITH_CHECK=ON -DWITH_EXPAT=ON -DWITH_LIBXML=OFF -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0 ../
+cmake -DWITH_EXAMPLES=ON -DLIBSBML_SKIP_SHARED_LIBRARY=ON -DWITH_CHECK=ON -DWITH_EXPAT=ON -DWITH_LIBXML=OFF -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0 ../
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     build-wrapper-linux-x86-64 --out-dir ../bw-output make
