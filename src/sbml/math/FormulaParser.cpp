@@ -460,7 +460,7 @@ SBML_parseFormula (const char *formula)
     {
       rule  = -action;
       node  = FormulaParser_reduceStackByRule(stack, rule);
-      state = (long) Stack_peek(stack);
+      state = (long long) Stack_peek(stack);
 
       Stack_push( stack, node );
       Stack_push( stack, (void *) FormulaParser_getGoto(state, rule) );
