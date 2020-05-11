@@ -742,6 +742,7 @@ if(WITH_ZLIB)
   list(APPEND SWIG_EXTRA_ARGS -DUSE_ZLIB)
 
     # make sure that we have a valid zip library
+    file(TO_CMAKE_PATH ${LIBZ_LIBRARY} LIBZ_LIBRARY)
     check_library_exists("${LIBZ_LIBRARY}" "gzopen" "" LIBZ_FOUND_SYMBOL)
     if(NOT LIBZ_FOUND_SYMBOL)
         # this is odd, but on windows this check always fails! must be a
